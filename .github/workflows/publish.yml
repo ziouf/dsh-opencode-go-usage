@@ -1,0 +1,58 @@
+# Publish @cyrilmarin/dsh-opencode-go-usage to npm (registry.npmjs.org)
+#
+# Triggered by version tags: push a `vX.Y.Z` tag to publish the matching
+# version. The package.json `version` must match the tag (enforced below).
+#
+# Required repository secret: NPM_TOKEN — an npm automation token with
+# "write" access (npmjs → Access Tokens → Automation).
+name: publish
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Check tag matches package version
+        run: |
+          version="$(node -p "require('./package.json').version")"
+          tag="${GITHUB_REF_NAME#v}"
+          if [ "$version" != "$tag" ]; then
+            echo "::error::Tag v$tag does not match package version $version"
+            exit 1
+          fi
+
+      - name: Build and verify
+        # `pnpm publish` also runs `prepublishOnly` (build + verify); build
+        # explicitly first so a build failure is reported before npm auth.
+        run: pnpm build && pnpm verify
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish

@@ -1,0 +1,140 @@
+/* OpenCode Go usage status bar — the band under the composer card.
+   It mirrors the conversation StatsLine metrics' geometry (kept in the chat
+   content column, centered) so it lines up with the chat input above, and
+   follows DSH design tokens (--dsw-alias-*) so it blends with either theme.
+   The bar contributes ZERO layout while its session's active model is not an
+   OpenCode Go provider (the component returns null); these rules only apply
+   to the rendered bar. */
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--dsh-chat-content-width);
+  margin: 0 auto;
+  padding: 4px calc(var(--dsh-composer-side-clearance) + 16px) 0;
+  color: var(--dsw-alias-label-tertiary);
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* One quota window readout: dot + label + percent + (rolling) countdown. */
+.windows {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.window {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+.windowDot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.windowDot[data-tone='ok'] {
+  background: var(--dsw-alias-state-success-primary);
+}
+
+.windowDot[data-tone='warn'] {
+  background: var(--dsw-alias-state-warn-primary);
+}
+
+.windowDot[data-tone='danger'] {
+  background: var(--dsw-alias-state-error-primary);
+}
+
+.windowLabel {
+  color: var(--dsw-alias-label-secondary);
+}
+
+.windowPercent {
+  font-variant-numeric: tabular-nums;
+}
+
+.windowPercent[data-tone='warn'] {
+  color: var(--dsw-alias-state-warn-primary);
+}
+
+.windowPercent[data-tone='danger'] {
+  color: var(--dsw-alias-state-error-primary);
+}
+
+.windowCountdown {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  color: var(--dsw-alias-label-caption);
+  font-variant-numeric: tabular-nums;
+}
+
+/* `|` separator between quota readouts (the same separator the stats line uses). */
+.sep {
+  color: var(--dsw-alias-separator-primary);
+  flex: none;
+}
+
+/* Trailing meta: sample age, stale note, refresh affordance. */
+.meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.updated {
+  color: var(--dsw-alias-label-caption);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Quiet inline note when the latest refresh failed but old data is shown. */
+.staleNote {
+  color: var(--dsw-alias-state-warn-primary);
+  font-size: 11px;
+}
+
+.emptyNote {
+  color: var(--dsw-alias-label-tertiary);
+}
+
+/* Manual refresh: a quiet icon button that never steals focus from the chat. */
+.refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--dsw-alias-label-caption);
+  font: inherit;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.refresh:hover:not(:disabled) {
+  background: var(--dsw-alias-interactive-bg-hover);
+  color: var(--dsw-alias-label-primary);
+}
+
+.refresh:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
