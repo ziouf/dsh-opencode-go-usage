@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.7](https://github.com/cyrilmarin/dsh-opencode-go-usage/compare/v0.0.6...v0.0.7) (2026-08-20)
+
+### Bug Fixes
+
+* **ci:** build before publish, OIDC auth, drop missing img artifacts ([00e78a3](https://github.com/cyrilmarin/dsh-opencode-go-usage/commit/00e78a3ed16a229599909fb11b5edea0de939e84))
+* **ci:** install pnpm via setup-node package-manager ([ccf8c55](https://github.com/cyrilmarin/dsh-opencode-go-usage/commit/ccf8c55322e7c2c58118837f9d8af0fb312e8caf))
 ## [0.0.6](https://github.com/cyrilmarin/dsh-opencode-go-usage/compare/v0.0.5...v0.0.6) (2026-08-20)
 
 ### Bug Fixes
