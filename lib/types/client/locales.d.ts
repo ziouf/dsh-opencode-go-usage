@@ -42,14 +42,10 @@ export declare const zh: {
     readonly 'bar.rolling.title': "5h 滚动窗口重置倒计时";
     readonly 'bar.stale': "刷新失败，显示上次数据";
     readonly 'empty.note': "用量服务未返回任何窗口数据。";
-    readonly 'health.connecting': "连接中…";
     readonly 'health.live': "实时";
     readonly 'health.stale': "数据过期";
-    readonly 'health.error': "异常";
     readonly 'error.connecting': "正在连接用量服务…";
-    readonly 'error.fetchFailed': "用量获取失败";
     readonly 'error.connecting.detail': "如果长时间停留在该状态，请检查 dsh 服务是否运行了 dsh-opencode-go-usage 插件。";
-    readonly 'error.unconfigured.hint': "配置方法：打开 Web 设置 → 模型，选择「官方渠道 · OpenCode Go」，填入 API Key 后稍候片刻即会自动生效。";
     readonly 'refresh.idle': "立即刷新";
     readonly 'refresh.loading': "刷新中…";
 };
