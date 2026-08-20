@@ -15,9 +15,10 @@ jobs:
         with:
           node-version: "24"
           registry-url: "https://registry.npmjs.org"
-          package-manager: "pnpm@11.22.0"
-          oidc: true
-      - run: pnpm i --frozen-lockfile
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - run: pnpm install --frozen-lockfile
       - run: pnpm build
       - run: pnpm test
-      - run: pnpm publish --ignore-scripts
+      - run: pnpm publish --ignore-scripts --no-git-checks
