@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.9](https://github.com/cyrilmarin/dsh-opencode-go-usage/compare/v0.0.8...v0.0.9) (2026-08-20)
+
+### Bug Fixes
+
+* **ci:** pin pnpm action version to match package.json 11.22.0 ([66a01ab](https://github.com/cyrilmarin/dsh-opencode-go-usage/commit/66a01abfa11b280978553c2cb8f2753a1969ce1d))
 ## [0.0.8](https://github.com/cyrilmarin/dsh-opencode-go-usage/compare/v0.0.7...v0.0.8) (2026-08-20)
 
 ### Bug Fixes
