@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.8](https://github.com/cyrilmarin/dsh-opencode-go-usage/compare/v0.0.7...v0.0.8) (2026-08-20)
+
+### Bug Fixes
+
+* **ci:** restore package-manager + oidc inputs on setup-node ([9ca3d04](https://github.com/cyrilmarin/dsh-opencode-go-usage/commit/9ca3d04031b965cad679959e6b7c007463005c0b))
 ## [0.0.7](https://github.com/cyrilmarin/dsh-opencode-go-usage/compare/v0.0.6...v0.0.7) (2026-08-20)
 
 ### Bug Fixes
