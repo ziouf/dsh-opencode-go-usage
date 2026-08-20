@@ -41,5 +41,5 @@ export interface Config {
     /** Per-request timeout in millis (default `10000`). */
     timeoutMs?: number;
 }
-export declare const Config: z<Config>;
+export declare const configSchema: z<Config>;
 export declare function apply(ctx: Context, config: Config): void;

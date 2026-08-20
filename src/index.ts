@@ -70,7 +70,7 @@ export interface Config {
   timeoutMs?: number
 }
 
-export const Config: z<Config> = z.object({
+export const configSchema: z<Config> = z.object({
   apiKeyEnv: z.string().default('OPENCODE_GO_API_KEY'),
   apiKey: z.string(),
   endpoint: z.string().default('https://opencode.ai/zen/go/v1/usage'),
@@ -152,7 +152,7 @@ export function apply(ctx: Context, config: Config): void {
         ctx.logger.debug(`opencode-go-usage: refresh failed: ${failure.code}${detail ? ` (${detail})` : ''}`)
       }
       return buildState()
-    })().then((next) => next).finally(() => {
+    })().finally(() => {
       refreshing = null
     })
     return refreshing
