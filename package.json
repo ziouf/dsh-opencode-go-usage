@@ -29,13 +29,13 @@
     "name": "Cyril MARIN",
     "email": "marin.cyril@gmail.com"
   },
-  "homepage": "https://github.com/cyrilmarin/dsh-opencode-go-usage#readme",
+  "homepage": "https://github.com/ziouf/dsh-opencode-go-usage#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cyrilmarin/dsh-opencode-go-usage.git"
+    "url": "https://github.com/ziouf/dsh-opencode-go-usage.git"
   },
   "bugs": {
-    "url": "https://github.com/cyrilmarin/dsh-opencode-go-usage/issues"
+    "url": "https://github.com/ziouf/dsh-opencode-go-usage/issues"
   },
   "keywords": [
     "dsh",
