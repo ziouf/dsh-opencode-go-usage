@@ -71,21 +71,11 @@
       "platform": "web"
     }
   },
-  "dshClient": {
-    "inject": [
-      "@deepseek-ai/dsh-client-runtime",
-      "@deepseek-ai/dsh-client-ui-primitives",
-      "@deepseek-ai/dsh-client-locale",
-      "@deepseek-ai/dsh-client-ui-slots",
-      "@deepseek-ai/dsh-client-ui-conversation",
-      "@deepseek-ai/dsh-client-ui-model-selection"
-    ],
-    "platform": "web"
-  },
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.client.json && tsdown",
     "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.client.json --noEmit",
     "verify": "node scripts/verify.mjs",
+    "test": "pnpm verify",
     "prepublishOnly": "pnpm build && pnpm verify",
     "release": "commit-and-tag-version && git push --follow-tags origin main"
   },
