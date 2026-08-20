@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.0.10](https://github.com/ziouf/dsh-opencode-go-usage/compare/v0.0.9...v0.0.10) (2026-08-20)
+
+### Bug Fixes
+
+* correct repository.url to match GitHub provenance URL ([565dcdf](https://github.com/ziouf/dsh-opencode-go-usage/commit/565dcdfa23fce89f1449437dffb6eea54d99f05e))
 ## [0.0.9](https://github.com/cyrilmarin/dsh-opencode-go-usage/compare/v0.0.8...v0.0.9) (2026-08-20)
 
 ### Bug Fixes
