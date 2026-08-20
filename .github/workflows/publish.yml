@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: "24"
           registry-url: "https://registry.npmjs.org"
+          package-manager: "pnpm@11.22.0"
       - run: pnpm i --frozen-lockfile
       - run: pnpm test
       - run: pnpm publish --ignore-scripts
