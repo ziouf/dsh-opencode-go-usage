@@ -50,8 +50,6 @@ manually in `~/.dsh/.credentials.yaml` or an environment variable:
 
 ## Usage status bar
 
-<img src="img/example.png" width="340" alt="Usage readout screenshot" />
-
 A compact, theme-aware status bar rendered in the
 `conversation.composer.dock` seat — the band **under the chat input window**,
 aligned with the composer column (the same slot the conversation stats line
